@@ -1,26 +1,98 @@
 @import "tailwindcss";
 
+/* ─────────────────────────────────────────────
+   HYPE Media Indonesia — Design System
+   Tailwind v4 @theme tokens
+   ───────────────────────────────────────────── */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Brand Colors */
+  --hype-black: #0a0a0a;
+  --hype-black-alt: #141414;
+  --hype-yellow: #ffe600;
+  --hype-yellow-hover: #e6c200;
+  --hype-white: #ffffff;
+  --hype-gray: #a0a0a0;
+  --hype-border: #2a2a2a;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Colors */
+  --color-hype-black: var(--hype-black);
+  --color-hype-black-alt: var(--hype-black-alt);
+  --color-hype-yellow: var(--hype-yellow);
+  --color-hype-yellow-hover: var(--hype-yellow-hover);
+  --color-hype-white: var(--hype-white);
+  --color-hype-gray: var(--hype-gray);
+  --color-hype-border: var(--hype-border);
+
+  /* Semantic aliases */
+  --color-background: var(--hype-black);
+  --color-background-alt: var(--hype-black-alt);
+  --color-foreground: var(--hype-white);
+  --color-accent: var(--hype-yellow);
+  --color-accent-hover: var(--hype-yellow-hover);
+  --color-muted: var(--hype-gray);
+  --color-border: var(--hype-border);
+
+  /* Typography */
+  --font-display: var(--font-anton);
+  --font-sans: var(--font-inter);
+
+  /* Border Radius */
+  --radius-card: 1rem;
+  --radius-btn: 0.5rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ─── Base ─── */
+*,
+*::before,
+*::after {
+  border-color: var(--hype-border);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--hype-black);
+  color: var(--hype-white);
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Selection ─── */
+::selection {
+  background-color: var(--hype-yellow);
+  color: var(--hype-black);
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--hype-black-alt);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--hype-border);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--hype-gray);
+}
+
+/* ─── Focus ring ─── */
+:focus-visible {
+  outline: 2px solid var(--hype-yellow);
+  outline-offset: 2px;
+}
+
+/* ─── shadcn/ui overrides for dark theme ─── */
+@layer base {
+  * {
+    border-color: var(--hype-border);
+  }
 }
