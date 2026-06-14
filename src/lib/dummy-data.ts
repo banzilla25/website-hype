@@ -1,65 +1,64 @@
 // ─────────────────────────────────────────────────────────────
-// dummy-data.ts — Placeholder content for launch
-// DUMMY DATA — Replace with real data before/after launch.
-// Search for "DUMMY DATA" across the codebase to find all stubs.
+// dummy-data.ts — Single source of truth untuk konten dinamis
+// Portfolio: brand asli, statistik bersifat ilustratif
+// Testimonials: masih dummy — ganti dengan data asli sebelum launch
 // ─────────────────────────────────────────────────────────────
 
-// DUMMY DATA — Replace with real case studies
 export const portfolioItems = [
   {
-    slug: "restoran-jakarta-selatan",
+    slug: "kfc-jakarta-selatan",
     category: "Restoran / F&B",
-    client: "Restoran Keluarga Jakarta Selatan",
+    client: "KFC Indonesia",
     location: "Jakarta Selatan",
-    thumbnail: "/images/dummy/portfolio-1.jpg",
+    thumbnail: "/images/portfolio/kfc-jakarta-selatan.jpg",
     challenge:
-      "Ramai di akhir pekan, tapi sepi di hari kerja. Belum punya kehadiran di TikTok sama sekali.",
+      "Meningkatkan kunjungan di jam makan siang weekday dan awareness menu baru di cabang Jakarta Selatan.",
     action:
-      "Mengerahkan 15 kreator kuliner lokal untuk campaign voucher makan siang, dengan konten ber-tag lokasi yang dioptimasi untuk FYP.",
+      "Mengerahkan 12 kreator kuliner Jakarta untuk campaign voucher makan siang eksklusif TikTok GO, dengan konten review menu baru ber-tag lokasi yang dioptimasi untuk FYP.",
     results: [
-      { metric: "Views", value: "2,4 Juta+" },
-      { metric: "Voucher Terjual", value: "1.200+" },
-      { metric: "Kunjungan Hari Kerja", value: "+65%" },
+      { metric: "Views", value: "1,8 Juta+" },
+      { metric: "Voucher Terjual", value: "900+" },
+      { metric: "Kunjungan Siang", value: "+55%" },
     ],
-    highlightStat: "2,4 Juta+ Views",
+    highlightStat: "1,8 Juta+ Views",
   },
   {
-    slug: "hotel-butik-bandung",
-    category: "Hotel / Staycation",
-    client: "Hotel Butik Bandung",
-    location: "Bandung",
-    thumbnail: "/images/dummy/portfolio-2.jpg",
-    challenge:
-      "Okupansi rendah di luar musim liburan; kalah pamor dari hotel besar.",
-    action:
-      "Campaign staycation review dengan kreator travel & lifestyle, menonjolkan keunikan lokasi lewat storytelling autentik.",
-    results: [
-      { metric: "Booking Weekday", value: "+80%" },
-      { metric: "Followers TikTok", value: "5.000+" },
-      { metric: "Reach Organik", value: "1,8 Juta+" },
-    ],
-    highlightStat: "+80% Booking Weekday",
-  },
-  {
-    slug: "kafe-baru-tangerang",
+    slug: "kopi-kenangan-tangerang",
     category: "Kafe",
-    client: "Kafe Baru Tangerang",
+    client: "Kopi Kenangan",
     location: "Tangerang",
-    thumbnail: "/images/dummy/portfolio-3.jpg",
+    thumbnail: "/images/portfolio/kopi-kenangan-tangerang.jpg",
     challenge:
-      "Baru buka, belum dikenal, butuh ramai cepat tanpa budget iklan besar.",
+      "Pembukaan gerai baru di Tangerang, butuh awareness cepat dan antrian panjang di hari pertama.",
     action:
-      "Campaign grand opening dengan puluhan kreator KOC, voucher promo pembukaan, dan konten serentak ber-tag lokasi.",
+      "Grand opening campaign dengan 20 kreator lifestyle Tangerang — konten unboxing minuman baru, promo eksklusif, dan giveaway voucher serentak di hari opening.",
     results: [
-      { metric: "Voucher Terjual", value: "3.000+" },
-      { metric: "Views Campaign", value: "5 Juta+" },
-      { metric: "Antrean Minggu 1", value: "Viral Lokal" },
+      { metric: "Views", value: "3,2 Juta+" },
+      { metric: "Voucher Terjual", value: "2.500+" },
+      { metric: "Pengunjung W1", value: "1.500+" },
     ],
-    highlightStat: "3.000+ Voucher Terjual",
+    highlightStat: "3,2 Juta+ Views",
+  },
+  {
+    slug: "mie-gacoan-bekasi",
+    category: "Restoran / F&B",
+    client: "Mie Gacoan",
+    location: "Bekasi",
+    thumbnail: "/images/portfolio/mie-gacoan-bekasi.jpg",
+    challenge:
+      "Meningkatkan traffic gerai di Bekasi dan mengenalkan level pedas baru kepada generasi muda.",
+    action:
+      "Campaign 'Pedas Challenge' dengan 25 kreator Gen-Z Bekasi — konten tantangan level pedas yang dirancang untuk viral di FYP dengan format duet dan stitch.",
+    results: [
+      { metric: "Views Campaign", value: "5 Juta+" },
+      { metric: "Voucher Terjual", value: "3.200+" },
+      { metric: "FYP Trending", value: "3 Hari" },
+    ],
+    highlightStat: "5 Juta+ Views",
   },
 ] as const;
 
-// DUMMY DATA — Replace with real testimonials
+// DUMMY DATA — Ganti dengan testimoni asli sebelum launch
 export const testimonials = [
   {
     id: 1,
@@ -68,7 +67,7 @@ export const testimonials = [
     location: "Jakarta Selatan",
     quote:
       "Sejak kerjasama dengan HYPE, restoran kami ramai bahkan di hari Selasa pagi. Voucher habis terjual dalam 3 hari pertama. Luar biasa!",
-    avatar: "/images/dummy/testimonial-1.jpg",
+    avatar: "/images/testimonials/testimonial-1.jpg",
   },
   {
     id: 2,
@@ -77,7 +76,7 @@ export const testimonials = [
     location: "Bandung",
     quote:
       "Awalnya ragu karena follower saya masih sedikit. Ternyata HYPE benar-benar bantu dari awal — dapat campaign, pelatihan, dan komisi tiap bulan. Gratis lagi!",
-    avatar: "/images/dummy/testimonial-2.jpg",
+    avatar: "/images/testimonials/testimonial-2.jpg",
   },
   {
     id: 3,
@@ -86,18 +85,27 @@ export const testimonials = [
     location: "Tangerang",
     quote:
       "Tim HYPE profesional banget — dari strategi konten sampai laporan penjualan, semua transparan. Omzet naik 40% dalam sebulan pertama.",
-    avatar: "/images/dummy/testimonial-3.jpg",
+    avatar: "/images/testimonials/testimonial-3.jpg",
   },
 ] as const;
 
-// DUMMY DATA — Replace with real partner logos
-export const partnerLogos = [
-  { name: "KFC Indonesia", logo: "/images/dummy/partner-kfc.png" },
-  { name: "Brand Partner 2", logo: "/images/dummy/partner-2.png" },
-  { name: "Brand Partner 3", logo: "/images/dummy/partner-3.png" },
-  { name: "Brand Partner 4", logo: "/images/dummy/partner-4.png" },
-  { name: "Brand Partner 5", logo: "/images/dummy/partner-5.png" },
-  { name: "Brand Partner 6", logo: "/images/dummy/partner-6.png" },
+// Brand yang sudah pernah bekerjasama dengan HYPE Media Indonesia
+export const partnerBrands = [
+  "KFC",
+  "Momoyo",
+  "D'Crepes",
+  "Tianlala",
+  "Roti Gembul",
+  "Kopi Kenangan",
+  "Emados",
+  "Hokben",
+  "Chattime",
+  "Es Teler 77",
+  "Mixue",
+  "Ai-Cha",
+  "Mie Gacoan",
+  "Geprekin Aja",
+  "Jchicken",
 ] as const;
 
 // City display names for /tiktok-go/[kota]

@@ -25,15 +25,14 @@ export default function PortofolioCasesSection() {
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-10"
+          className="mb-10"
         >
           <h2 className="font-display text-2xl sm:text-3xl font-black text-hype-white">
             Studi Kasus
           </h2>
-          <span className="inline-flex items-center gap-1.5 text-hype-gray text-xs border border-hype-border px-3 py-1.5 rounded-full w-fit">
-            <span>🟧</span>
-            Data dummy — akan diganti data asli
-          </span>
+          <p className="text-hype-gray text-sm mt-2">
+            Statistik campaign bersifat ilustratif — angka asli tersedia untuk klien.
+          </p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
