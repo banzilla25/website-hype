@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight, Camera } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
 
 const fadeUp = {
@@ -18,7 +18,7 @@ const stagger = {
 export default function HeroSection() {
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-hype-black">
-      {/* Background grain/texture overlay */}
+      {/* Background grain */}
       <div
         className="absolute inset-0 opacity-[0.03] pointer-events-none"
         style={{
@@ -27,21 +27,14 @@ export default function HeroSection() {
           backgroundSize: "128px",
         }}
       />
-
-      {/* Radial glow behind headline */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-hype-yellow/5 blur-3xl pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 w-full">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
           {/* Left — Text */}
-          <motion.div
-            variants={stagger}
-            initial="hidden"
-            animate="show"
-            className="text-left"
-          >
-            {/* Badge */}
+          <motion.div variants={stagger} initial="hidden" animate="show" className="text-left">
+
             <motion.div variants={fadeUp}>
               <span className="inline-flex items-center gap-2 bg-hype-black-alt border border-hype-border text-hype-yellow text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full mb-6">
                 <span className="w-1.5 h-1.5 rounded-full bg-hype-yellow animate-pulse" />
@@ -49,159 +42,108 @@ export default function HeroSection() {
               </span>
             </motion.div>
 
-            {/* Headline */}
             <motion.h1
               variants={fadeUp}
               className="font-display text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-black leading-none tracking-tight mb-6"
             >
               <span className="block text-hype-white">Ubah Views</span>
               <span className="block text-hype-white">Jadi</span>
-              <span className="block text-hype-yellow italic">
-                Pengunjung Nyata.
-              </span>
+              <span className="block text-hype-yellow italic">Pengunjung Nyata.</span>
             </motion.h1>
 
-            {/* Subheadline */}
-            <motion.p
-              variants={fadeUp}
-              className="text-hype-gray text-base sm:text-lg lg:text-xl leading-relaxed mb-8 max-w-lg"
-            >
+            <motion.p variants={fadeUp} className="text-hype-gray text-base sm:text-lg lg:text-xl leading-relaxed mb-8 max-w-lg">
               {siteConfig.description}
             </motion.p>
 
-            {/* CTA Buttons */}
-            <motion.div
-              variants={fadeUp}
-              className="flex flex-col sm:flex-row gap-4"
-            >
+            <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/untuk-kreator"
                 className="group inline-flex items-center justify-center gap-2 bg-hype-yellow hover:bg-hype-yellow-hover text-hype-black text-base font-bold px-7 py-4 rounded-lg transition-all duration-150 hover:scale-105 active:scale-95"
               >
                 Saya Kreator
-                <ArrowRight
-                  size={18}
-                  className="group-hover:translate-x-1 transition-transform"
-                />
+                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
                 href="/untuk-merchant"
                 className="group inline-flex items-center justify-center gap-2 border-2 border-hype-white/30 hover:border-hype-white text-hype-white text-base font-bold px-7 py-4 rounded-lg transition-all duration-150 hover:bg-hype-white/5"
               >
                 Saya Merchant
-                <ArrowRight
-                  size={18}
-                  className="group-hover:translate-x-1 transition-transform"
-                />
+                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </Link>
             </motion.div>
           </motion.div>
 
-          {/* Right — Visual mockup */}
+          {/* Right — Photo */}
           <motion.div
-            initial={{ opacity: 0, x: 40, scale: 0.95 }}
+            initial={{ opacity: 0, x: 40, scale: 0.96 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
             className="relative flex justify-center lg:justify-end"
           >
-            <div className="relative">
-              {/* Phone frame */}
-              <div className="relative w-[260px] sm:w-[300px] lg:w-[280px] xl:w-[320px] aspect-[9/19] bg-hype-black-alt rounded-[2.5rem] border-2 border-hype-border shadow-2xl overflow-hidden">
-                {/* Status bar */}
-                <div className="absolute top-0 left-0 right-0 h-8 bg-black/60 flex items-center justify-center">
-                  <div className="w-20 h-1.5 bg-hype-black rounded-full" />
-                </div>
+            <div className="relative w-full max-w-85">
 
-                {/* TikTok GO content mockup */}
-                <div className="absolute inset-0 flex flex-col">
-                  {/* Content area */}
-                  <div className="flex-1 bg-linear-to-b from-[#1a0a00] to-hype-black-alt mt-8 relative overflow-hidden">
-                    {/* Voucher card mockup */}
-                    <div className="absolute bottom-16 left-4 right-4">
-                      <div className="bg-hype-yellow rounded-xl p-4">
-                        <p className="text-hype-black text-xs font-bold uppercase tracking-wide mb-1">
-                          TikTok GO Voucher
-                        </p>
-                        <p className="text-hype-black text-lg font-black leading-tight">
-                          Makan Siang<br />Gratis 50K!
-                        </p>
-                        <div className="mt-2 flex items-center justify-between">
-                          <span className="text-hype-black/70 text-xs">
-                            Valid: 24 jam
-                          </span>
-                          <span className="bg-hype-black text-hype-yellow text-xs font-bold px-3 py-1 rounded-full">
-                            Klaim →
-                          </span>
-                        </div>
-                      </div>
-
-                      {/* Location tag */}
-                      <div className="mt-2 flex items-center gap-2 bg-hype-black/80 rounded-lg px-3 py-2">
-                        <span className="text-hype-yellow text-sm">📍</span>
-                        <div>
-                          <p className="text-hype-white text-xs font-semibold">
-                            Restoran Partner HYPE
-                          </p>
-                          <p className="text-hype-gray text-xs">Jakarta Selatan</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Play overlay hint */}
-                    <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                      <Play fill="white" size={20} className="text-white ml-0.5" />
-                    </div>
-
-                    {/* Creator stats overlay */}
-                    <div className="absolute right-3 top-1/4 flex flex-col items-center gap-3">
-                      <div className="text-center">
-                        <div className="w-9 h-9 rounded-full bg-hype-yellow flex items-center justify-center text-xs">❤️</div>
-                        <p className="text-hype-white text-xs mt-1">24K</p>
-                      </div>
-                      <div className="text-center">
-                        <div className="w-9 h-9 rounded-full bg-hype-black-alt border border-hype-border flex items-center justify-center text-xs">💬</div>
-                        <p className="text-hype-white text-xs mt-1">1.2K</p>
-                      </div>
-                    </div>
+              {/* Image container — aspect portrait */}
+              <div className="relative aspect-4/5 rounded-3xl overflow-hidden border border-hype-border">
+                {/* Placeholder — hapus div ini dan uncomment <Image> saat foto siap */}
+                <div className="absolute inset-0 bg-hype-black-alt flex flex-col items-center justify-center gap-3">
+                  <div className="w-16 h-16 rounded-2xl bg-hype-yellow/10 border border-hype-yellow/20 flex items-center justify-center">
+                    <Camera size={28} className="text-hype-yellow/60" />
                   </div>
-
-                  {/* Bottom nav mockup */}
-                  <div className="h-14 bg-hype-black flex items-center justify-around px-4 border-t border-hype-border">
-                    {["🏠", "🔍", "➕", "📥", "👤"].map((icon, i) => (
-                      <span key={i} className={`text-lg ${i === 2 ? "bg-hype-yellow rounded-lg px-2 py-0.5" : ""}`}>
-                        {icon}
-                      </span>
-                    ))}
+                  <div className="text-center px-6">
+                    <p className="text-hype-gray text-xs mb-1">Foto kreator filming di restoran</p>
+                    <p className="text-hype-yellow/50 text-[10px] font-mono">/images/hero/beranda.jpg</p>
                   </div>
                 </div>
+                {/*
+                  import Image from "next/image";
+                  <Image
+                    src="/images/hero/beranda.jpg"
+                    alt="Kreator HYPE sedang filming konten di restoran"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                */}
+                <div className="absolute inset-0 bg-linear-to-t from-hype-black/40 via-transparent to-transparent pointer-events-none" />
               </div>
 
-              {/* Floating stat badges */}
+              {/* Floating — Kreator Aktif */}
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.8 }}
-                className="absolute -left-14 top-1/4 bg-hype-black-alt border border-hype-border rounded-xl px-4 py-3 shadow-xl"
+                className="absolute -left-8 top-[22%] bg-hype-black-alt border border-hype-border rounded-xl px-4 py-3 shadow-xl"
               >
-                <p className="text-hype-yellow font-display text-xl font-black leading-none">10K+</p>
-                <p className="text-hype-gray text-xs mt-0.5">Kreator Aktif</p>
+                <p className="text-hype-gray text-[10px] font-medium uppercase tracking-wide mb-0.5">Kreator Aktif</p>
+                <p className="font-display text-2xl font-black text-hype-yellow leading-none">10K+</p>
               </motion.div>
 
+              {/* Floating — Views/Bulan */}
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 1 }}
-                className="absolute -right-12 bottom-1/4 bg-hype-black-alt border border-hype-border rounded-xl px-4 py-3 shadow-xl"
+                className="absolute -right-8 top-1/2 bg-hype-black-alt border border-hype-border rounded-xl px-4 py-3 shadow-xl"
               >
-                <p className="text-hype-yellow font-display text-xl font-black leading-none">50M+</p>
-                <p className="text-hype-gray text-xs mt-0.5">Views/Bulan</p>
+                <p className="text-hype-gray text-[10px] font-medium uppercase tracking-wide mb-0.5">Views/Bulan</p>
+                <p className="font-display text-2xl font-black text-hype-yellow leading-none">50M+</p>
+              </motion.div>
+
+              {/* Floating — Merchant Partner (bottom center, yellow) */}
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.1 }}
+                className="absolute -bottom-5 left-1/2 -translate-x-1/2 bg-hype-yellow rounded-xl px-5 py-2.5 shadow-xl whitespace-nowrap"
+              >
+                <p className="text-hype-black text-[10px] font-bold uppercase tracking-wide mb-0.5">Merchant Partner</p>
+                <p className="text-hype-black font-display font-black text-xl leading-none">150+</p>
               </motion.div>
             </div>
           </motion.div>
         </div>
       </div>
 
-      {/* Bottom fade */}
       <div className="absolute bottom-0 left-0 right-0 h-24 bg-linear-to-t from-hype-black to-transparent pointer-events-none" />
     </section>
   );

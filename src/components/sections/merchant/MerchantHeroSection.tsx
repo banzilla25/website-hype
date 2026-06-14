@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, MapPin, Play, TrendingUp } from "lucide-react";
+import { ArrowRight, Camera, Store } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
 
 const fadeUp = {
@@ -18,7 +18,7 @@ const stagger = {
 export default function MerchantHeroSection() {
   return (
     <section className="relative min-h-[88vh] flex items-center overflow-hidden bg-hype-black">
-      <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] rounded-full bg-hype-yellow/4 blur-3xl pointer-events-none" />
+      <div className="absolute top-1/3 left-1/4 w-125 h-125 rounded-full bg-hype-yellow/4 blur-3xl pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-24 w-full">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -79,103 +79,71 @@ export default function MerchantHeroSection() {
             </motion.div>
           </motion.div>
 
-          {/* Right — Merchant mockup visual */}
+          {/* Right — Photo */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative flex justify-center lg:justify-end"
           >
-            <div className="relative w-full max-w-sm">
-              {/* Main card — TikTok GO campaign mockup */}
-              <div className="relative bg-hype-black-alt border border-hype-border rounded-3xl overflow-hidden">
+            <div className="relative w-full max-w-lg">
 
-                {/* Campaign header */}
-                <div className="bg-hype-yellow px-6 py-4 flex items-center justify-between">
-                  <div>
-                    <p className="text-hype-black text-xs font-bold uppercase tracking-wide">Campaign Aktif</p>
-                    <p className="text-hype-black font-black text-lg leading-tight">Restoran Partner HYPE</p>
+              {/* Image container — landscape */}
+              <div className="relative aspect-4/3 rounded-3xl overflow-hidden border border-hype-border">
+                {/* Placeholder — hapus div ini dan uncomment <Image> saat foto siap */}
+                <div className="absolute inset-0 bg-hype-black-alt flex flex-col items-center justify-center gap-3">
+                  <div className="w-16 h-16 rounded-2xl bg-hype-yellow/10 border border-hype-yellow/20 flex items-center justify-center">
+                    <Store size={28} className="text-hype-yellow/60" />
                   </div>
-                  <div className="w-10 h-10 rounded-full bg-hype-black/10 flex items-center justify-center">
-                    <Play fill="black" size={16} className="text-hype-black ml-0.5" />
-                  </div>
-                </div>
-
-                {/* Stats */}
-                <div className="grid grid-cols-3 gap-px bg-hype-border">
-                  {[
-                    { label: "Kreator", value: "15" },
-                    { label: "Views", value: "2.4Jt" },
-                    { label: "Voucher", value: "1.2K" },
-                  ].map((stat) => (
-                    <div key={stat.label} className="bg-hype-black-alt py-4 text-center">
-                      <p className="font-display text-2xl font-black text-hype-yellow">{stat.value}</p>
-                      <p className="text-hype-gray text-xs mt-0.5">{stat.label}</p>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Content preview feed */}
-                <div className="p-5 space-y-3">
-                  {[
-                    { creator: "@foodie.jakarta", views: "450K", status: "Live" },
-                    { creator: "@kuliner.id", views: "280K", status: "Live" },
-                    { creator: "@review.makan", views: "190K", status: "Selesai" },
-                  ].map((item) => (
-                    <div
-                      key={item.creator}
-                      className="flex items-center justify-between bg-hype-black rounded-xl px-4 py-3"
-                    >
-                      <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 rounded-full bg-hype-yellow/20 flex items-center justify-center text-xs">🎬</div>
-                        <div>
-                          <p className="text-hype-white text-xs font-semibold">{item.creator}</p>
-                          <p className="text-hype-gray text-xs">{item.views} views</p>
-                        </div>
-                      </div>
-                      <span className={`text-xs font-bold px-2.5 py-1 rounded-full ${
-                        item.status === "Live"
-                          ? "bg-green-500/15 text-green-400 border border-green-500/20"
-                          : "bg-hype-border text-hype-gray"
-                      }`}>
-                        {item.status}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Location tag */}
-                <div className="px-5 pb-5">
-                  <div className="flex items-center gap-2 bg-hype-black rounded-xl px-4 py-3">
-                    <MapPin size={14} className="text-hype-yellow shrink-0" />
-                    <div>
-                      <p className="text-hype-white text-xs font-semibold">TikTok GO Location Tag</p>
-                      <p className="text-hype-gray text-xs">Jakarta Selatan · 8.000+ voucher terjual</p>
-                    </div>
-                    <TrendingUp size={14} className="text-green-400 ml-auto shrink-0" />
+                  <div className="text-center px-6">
+                    <p className="text-hype-gray text-xs mb-1">Foto restoran/kafe ramai pengunjung</p>
+                    <p className="text-hype-yellow/50 text-[10px] font-mono">/images/hero/merchant.jpg</p>
                   </div>
                 </div>
+                {/*
+                  import Image from "next/image";
+                  <Image
+                    src="/images/hero/merchant.jpg"
+                    alt="Restoran ramai pengunjung hasil campaign TikTok GO"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                */}
+                <div className="absolute inset-0 bg-linear-to-t from-hype-black/50 via-transparent to-transparent pointer-events-none" />
               </div>
 
-              {/* Floating ROI badge */}
+              {/* Floating — Campaign Aktif (top left) */}
               <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.8 }}
-                className="absolute -bottom-4 -left-8 bg-hype-black-alt border border-hype-border rounded-xl px-4 py-3 shadow-xl"
+                initial={{ opacity: 0, x: -16 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.7 }}
+                className="absolute -top-5 -left-6 bg-hype-black-alt border border-hype-border rounded-xl px-4 py-3 shadow-xl"
               >
-                <p className="text-hype-gray text-[10px] font-medium uppercase tracking-wide mb-0.5">Kunjungan Nyata</p>
-                <p className="font-display text-xl font-black text-green-400">+65% Weekday</p>
+                <p className="text-hype-gray text-[10px] font-medium uppercase tracking-wide mb-0.5">Campaign Aktif</p>
+                <p className="font-display text-2xl font-black text-hype-yellow leading-none">15+</p>
               </motion.div>
 
+              {/* Floating — Full Service (top right, yellow) */}
               <motion.div
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1 }}
-                className="absolute -top-4 -right-6 bg-hype-yellow border border-hype-yellow rounded-xl px-4 py-2.5 shadow-xl"
+                initial={{ opacity: 0, x: 16 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.85 }}
+                className="absolute -top-5 -right-4 bg-hype-yellow rounded-xl px-4 py-2.5 shadow-xl"
               >
                 <p className="text-hype-black text-[10px] font-bold uppercase tracking-wide mb-0.5">Full Service</p>
-                <p className="text-hype-black font-black text-sm">Dari Strategi → Laporan</p>
+                <p className="text-hype-black font-black text-sm">Strategi → Laporan</p>
+              </motion.div>
+
+              {/* Floating — Kunjungan Nyata (bottom left) */}
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1 }}
+                className="absolute -bottom-5 -left-6 bg-hype-black-alt border border-hype-border rounded-xl px-4 py-3 shadow-xl"
+              >
+                <p className="text-hype-gray text-[10px] font-medium uppercase tracking-wide mb-0.5">Kunjungan Nyata</p>
+                <p className="font-display text-xl font-black text-green-400 leading-none">+65% Weekday</p>
               </motion.div>
             </div>
           </motion.div>

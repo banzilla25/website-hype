@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import { Users } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
 
 const companyDetails = [
@@ -50,40 +51,77 @@ export default function TentangHeroSection() {
             </div>
           </motion.div>
 
-          {/* Right — Company card */}
+          {/* Right — Photo */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.15 }}
+            className="flex justify-center lg:justify-end"
           >
-            <div className="bg-hype-black-alt border border-hype-border rounded-3xl p-8 lg:p-10">
-              <div className="text-center mb-8">
-                <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-hype-yellow mb-4">
-                  <span className="font-display text-4xl font-black text-hype-black">H</span>
-                </div>
-                <h2 className="font-display text-xl font-black text-hype-white">
-                  {siteConfig.legalName}
-                </h2>
-                <p className="text-hype-gray text-sm mt-1">{siteConfig.location.display}</p>
-              </div>
+            <div className="relative w-full max-w-sm">
 
-              <div className="grid grid-cols-2 gap-3">
-                {companyDetails.map((item) => (
-                  <div
-                    key={item.label}
-                    className="bg-hype-black border border-hype-border rounded-xl p-3"
-                  >
-                    <p className="text-hype-gray text-xs mb-0.5">{item.label}</p>
-                    <p className="font-bold text-hype-white text-sm leading-snug">{item.value}</p>
+              {/* Image container — portrait */}
+              <div className="relative aspect-3/4 rounded-3xl overflow-hidden border border-hype-border">
+                {/* Placeholder — hapus div ini dan uncomment <Image> saat foto siap */}
+                <div className="absolute inset-0 bg-hype-black-alt flex flex-col items-center justify-center gap-3">
+                  <div className="w-16 h-16 rounded-2xl bg-hype-yellow/10 border border-hype-yellow/20 flex items-center justify-center">
+                    <Users size={28} className="text-hype-yellow/60" />
                   </div>
-                ))}
+                  <div className="text-center px-6">
+                    <p className="text-hype-gray text-xs mb-1">Foto tim HYPE atau founder</p>
+                    <p className="text-hype-yellow/50 text-[10px] font-mono">/images/hero/tentang-kami.jpg</p>
+                  </div>
+                </div>
+                {/*
+                  import Image from "next/image";
+                  <Image
+                    src="/images/hero/tentang-kami.jpg"
+                    alt="Tim HYPE Media Indonesia"
+                    fill
+                    className="object-cover object-top"
+                  />
+                */}
+                {/* Gradient overlay for bottom card readability */}
+                <div className="absolute inset-0 bg-linear-to-t from-hype-black/80 via-hype-black/10 to-transparent pointer-events-none" />
               </div>
 
-              <div className="mt-4 pt-4 border-t border-hype-border">
-                <p className="text-hype-gray text-xs text-center">
-                  {siteConfig.tagline}
+              {/* Bottom overlay — company info card */}
+              <div className="absolute bottom-4 left-4 right-4 bg-hype-black/85 backdrop-blur-md border border-hype-border/60 rounded-2xl p-4">
+                <p className="font-display font-black text-hype-white text-sm leading-tight">
+                  {siteConfig.legalName}
                 </p>
+                <p className="text-hype-gray text-xs mt-0.5 mb-3">{siteConfig.location.display}</p>
+                <div className="grid grid-cols-2 gap-2">
+                  {companyDetails.map((item) => (
+                    <div key={item.label} className="bg-hype-black/60 border border-hype-border/40 rounded-lg p-2">
+                      <p className="text-hype-gray text-[10px] mb-0.5">{item.label}</p>
+                      <p className="font-bold text-hype-white text-xs leading-snug">{item.value}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
+
+              {/* Floating — TikTok GO Official (top right) */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.85 }}
+                animate={inView ? { opacity: 1, scale: 1 } : {}}
+                transition={{ delay: 0.5 }}
+                className="absolute -top-4 -right-6 bg-hype-black-alt border border-hype-yellow/30 rounded-xl px-3 py-2.5 shadow-xl"
+              >
+                <p className="text-hype-yellow text-[10px] font-bold uppercase tracking-wide leading-none mb-0.5">TikTok GO</p>
+                <p className="text-hype-white text-xs font-black leading-none">Official Partner</p>
+              </motion.div>
+
+              {/* Floating — Est. (top left) */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.85 }}
+                animate={inView ? { opacity: 1, scale: 1 } : {}}
+                transition={{ delay: 0.65 }}
+                className="absolute -top-4 -left-6 bg-hype-yellow rounded-xl px-3 py-2.5 shadow-xl"
+              >
+                <p className="text-hype-black text-[10px] font-bold uppercase tracking-wide leading-none mb-0.5">Berbasis di</p>
+                <p className="text-hype-black text-xs font-black leading-none">Tangerang</p>
+              </motion.div>
             </div>
           </motion.div>
         </div>
