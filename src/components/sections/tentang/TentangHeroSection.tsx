@@ -5,13 +5,6 @@ import { motion, useInView } from "framer-motion";
 import { Users } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
 
-const companyDetails = [
-  { label: "Badan Hukum", value: "PT" },
-  { label: "Fokus", value: "TikTok GO" },
-  { label: "Bidang", value: "F&B · Hotel · Lifestyle" },
-  { label: "Area", value: "Seluruh Indonesia" },
-];
-
 export default function TentangHeroSection() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
@@ -83,22 +76,6 @@ export default function TentangHeroSection() {
                 */}
                 {/* Gradient overlay for bottom card readability */}
                 <div className="absolute inset-0 bg-linear-to-t from-hype-black/80 via-hype-black/10 to-transparent pointer-events-none" />
-              </div>
-
-              {/* Bottom overlay — company info card */}
-              <div className="absolute bottom-4 left-4 right-4 bg-hype-black/85 backdrop-blur-md border border-hype-border/60 rounded-2xl p-4">
-                <p className="font-display font-black text-hype-white text-sm leading-tight">
-                  {siteConfig.legalName}
-                </p>
-                <p className="text-hype-gray text-xs mt-0.5 mb-3">{siteConfig.location.display}</p>
-                <div className="grid grid-cols-2 gap-2">
-                  {companyDetails.map((item) => (
-                    <div key={item.label} className="bg-hype-black/60 border border-hype-border/40 rounded-lg p-2">
-                      <p className="text-hype-gray text-[10px] mb-0.5">{item.label}</p>
-                      <p className="font-bold text-hype-white text-xs leading-snug">{item.value}</p>
-                    </div>
-                  ))}
-                </div>
               </div>
 
               {/* Floating — TikTok GO Official (top right) */}
