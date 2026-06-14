@@ -21,6 +21,17 @@ export default function Footer() {
           {/* Col 1 — Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
             <Link href="/" aria-label="HYPE Media Indonesia">
+              {/*
+                Uncomment saat logo siap — hapus <span> di bawah:
+                import Image from "next/image";
+                <Image
+                  src="/images/logo/hype-logo-dark.svg"
+                  alt="HYPE Media Indonesia"
+                  width={100}
+                  height={32}
+                  className="h-8 w-auto"
+                />
+              */}
               <span className="font-display text-3xl font-black tracking-tight text-hype-black leading-none">
                 HYPE
               </span>
