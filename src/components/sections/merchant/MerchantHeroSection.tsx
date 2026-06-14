@@ -97,13 +97,15 @@ export default function MerchantHeroSection() {
                   </div>
                   <div className="text-center px-6">
                     <p className="text-hype-gray text-xs mb-1">Foto restoran/kafe ramai pengunjung</p>
-                    <p className="text-hype-yellow/50 text-[10px] font-mono">/images/hero/merchant.jpg</p>
+                    <p className="text-hype-yellow/50 text-[10px] font-mono">/images/hero/merchant.webp</p>
+                    <p className="text-hype-gray/40 text-[10px] mt-0.5">(.webp / .png / .jpg)</p>
                   </div>
                 </div>
                 {/*
+                  Uncomment saat foto tersedia (hapus div placeholder di atas):
                   import Image from "next/image";
                   <Image
-                    src="/images/hero/merchant.jpg"
+                    src="/images/hero/merchant.webp"
                     alt="Restoran ramai pengunjung hasil campaign TikTok GO"
                     fill
                     className="object-cover"

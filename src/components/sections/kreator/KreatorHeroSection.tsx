@@ -87,20 +87,33 @@ export default function KreatorHeroSection() {
           >
             <div className="relative w-full max-w-80">
 
-              {/* Image container — portrait */}
-              <div className="relative aspect-3/4 rounded-3xl overflow-hidden border border-hype-border">
+              {/* Image container — portrait, transparent bg untuk PNG/WebP no-background */}
+              <div className="relative aspect-3/4">
                 {/* Placeholder — hapus div ini dan uncomment <Image> saat foto siap */}
-                <div className="absolute inset-0 bg-hype-black-alt flex flex-col items-center justify-center gap-3">
+                <div className="absolute inset-0 rounded-3xl border-2 border-dashed border-hype-border/40 flex flex-col items-center justify-center gap-3">
                   <div className="w-16 h-16 rounded-2xl bg-hype-yellow/10 border border-hype-yellow/20 flex items-center justify-center">
                     <Camera size={28} className="text-hype-yellow/60" />
                   </div>
                   <div className="text-center px-6">
-                    <p className="text-hype-gray text-xs mb-1">Foto kreator muda filming di kafe</p>
-                    <p className="text-hype-yellow/50 text-[10px] font-mono">/images/hero/kreator.jpg</p>
+                    <p className="text-hype-gray text-xs mb-1">Foto kreator muda — no background</p>
+                    <p className="text-hype-yellow/50 text-[10px] font-mono">/images/hero/kreator.webp</p>
+                    <p className="text-hype-gray/40 text-[10px] mt-0.5">(.webp / .png / .jpg)</p>
                   </div>
                 </div>
                 {/*
+                  Uncomment saat foto tersedia (hapus div placeholder di atas):
                   import Image from "next/image";
+
+                  Untuk foto NO BACKGROUND (webp/png transparan) — pakai object-contain:
+                  <Image
+                    src="/images/hero/kreator.webp"
+                    alt="Kreator muda HYPE filming konten di kafe"
+                    fill
+                    className="object-contain object-bottom"
+                    priority
+                  />
+
+                  Untuk foto DENGAN BACKGROUND (jpg/webp normal) — pakai object-cover:
                   <Image
                     src="/images/hero/kreator.jpg"
                     alt="Kreator muda HYPE filming konten di kafe"
@@ -109,7 +122,6 @@ export default function KreatorHeroSection() {
                     priority
                   />
                 */}
-                <div className="absolute inset-0 bg-linear-to-t from-hype-black/50 via-transparent to-transparent pointer-events-none" />
               </div>
 
               {/* Floating — Komisi Bulanan (top left) */}
