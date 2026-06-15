@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { partnerBrands } from "@/lib/dummy-data";
@@ -59,18 +60,13 @@ export default function PartnerLogoSection() {
               transition={{ delay: 0.05 + i * 0.04 }}
               className="bg-hype-black border border-hype-border hover:border-hype-white/20 rounded-xl px-4 py-2.5 transition-colors cursor-default flex items-center justify-center min-w-[80px]"
             >
-              {/*
-                Uncomment saat file logo tersedia di /public/images/partners/:
-                import Image from "next/image";
-                <Image
-                  src={brand.logo}
-                  alt={brand.name}
-                  width={80}
-                  height={32}
-                  className="h-7 w-auto object-contain brightness-0 invert"
-                />
-              */}
-              <span className="text-hype-white text-sm font-semibold">{brand.name}</span>
+              <Image
+                src={brand.logo}
+                alt={brand.name}
+                width={80}
+                height={32}
+                className="h-7 w-auto object-contain brightness-0 invert"
+              />
             </motion.div>
           ))}
         </div>
