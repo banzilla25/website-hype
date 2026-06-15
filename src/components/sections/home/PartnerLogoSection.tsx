@@ -52,21 +52,21 @@ export default function PartnerLogoSection() {
             MODE LOGO (aktif setelah logo tersedia): uncomment blok Image di bawah,
             hapus <span>{brand.name}</span> di tiap pill
         */}
-        <div className="flex flex-wrap gap-2.5">
+        <div className="flex flex-wrap gap-3">
           {partnerBrands.map((brand, i) => (
             <motion.div
               key={brand.name}
               initial={{ opacity: 0, scale: 0.9 }}
               animate={inView ? { opacity: 1, scale: 1 } : {}}
               transition={{ delay: 0.05 + i * 0.04 }}
-              className="bg-hype-black border border-hype-border hover:border-hype-white/20 rounded-xl px-4 py-2.5 transition-colors cursor-default flex items-center justify-center min-w-20"
+              className="bg-hype-black border border-hype-border hover:border-hype-white/20 rounded-xl transition-colors cursor-default flex items-center justify-center w-28 h-14"
             >
               <Image
                 src={img(brand.logo)}
                 alt={brand.name}
-                width={80}
-                height={32}
-                className="h-7 w-auto object-contain brightness-0 invert"
+                width={88}
+                height={40}
+                className="max-h-9 max-w-20 object-contain"
               />
             </motion.div>
           ))}

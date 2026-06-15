@@ -10,7 +10,7 @@ export const portfolioItems = [
     category: "Restoran / F&B",
     client: "KFC Indonesia",
     location: "Jakarta Selatan",
-    thumbnail: "/images/portfolio/kfc-jakarta-selatan.jpeg",
+    thumbnail: "/images/portfolio/kopi-kenangan-tangerang.jpeg",
     challenge:
       "Meningkatkan kunjungan di jam makan siang weekday dan awareness menu baru di cabang Jakarta Selatan.",
     action:
@@ -27,7 +27,7 @@ export const portfolioItems = [
     category: "Kafe",
     client: "Kopi Kenangan",
     location: "Tangerang",
-    thumbnail: "/images/portfolio/kopi-kenangan-tangerang.jpeg",
+    thumbnail: "/images/portfolio/mie-gacoan-bekasi.jpeg",
     challenge:
       "Pembukaan gerai baru di Tangerang, butuh awareness cepat dan antrian panjang di hari pertama.",
     action:
@@ -44,7 +44,7 @@ export const portfolioItems = [
     category: "Restoran / F&B",
     client: "Mie Gacoan",
     location: "Bekasi",
-    thumbnail: "/images/portfolio/mie-gacoan-bekasi.jpeg",
+    thumbnail: "/images/portfolio/kfc-jakarta-selatan.jpeg",
     challenge:
       "Meningkatkan traffic gerai di Bekasi dan mengenalkan level pedas baru kepada generasi muda.",
     action:
