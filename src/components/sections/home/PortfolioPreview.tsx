@@ -1,10 +1,12 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { ArrowRight, MapPin, TrendingUp } from "lucide-react";
+import { ArrowRight, MapPin } from "lucide-react";
 import { portfolioItems } from "@/lib/dummy-data";
+import { img } from "@/lib/utils";
 
 export default function PortfolioPreview() {
   const ref = useRef(null);
@@ -52,12 +54,15 @@ export default function PortfolioPreview() {
                 href={`/portofolio/${item.slug}`}
                 className="group block bg-hype-black-alt border border-hype-border rounded-2xl overflow-hidden hover:border-hype-yellow/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-hype-yellow/5"
               >
-                {/* Image placeholder */}
-                <div className="aspect-[16/9] bg-linear-to-br from-hype-black-alt to-hype-border relative overflow-hidden">
-                  <div className="absolute inset-0 flex items-center justify-center opacity-10">
-                    <TrendingUp size={64} />
-                  </div>
-                  <div className="absolute inset-0 bg-linear-to-t from-hype-black-alt to-transparent" />
+                {/* Thumbnail */}
+                <div className="aspect-video relative overflow-hidden">
+                  <Image
+                    src={img(item.thumbnail)}
+                    alt={item.client}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-linear-to-t from-hype-black-alt/80 to-transparent" />
                   {/* Category badge */}
                   <div className="absolute top-4 left-4">
                     <span className="bg-hype-yellow text-hype-black text-xs font-bold px-3 py-1 rounded-full">
