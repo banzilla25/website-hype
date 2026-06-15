@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { MessageCircle, MapPin, Mail } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
@@ -21,20 +22,13 @@ export default function Footer() {
           {/* Col 1 — Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
             <Link href="/" aria-label="HYPE Media Indonesia">
-              {/*
-                Uncomment saat logo siap — hapus <span> di bawah:
-                import Image from "next/image";
-                <Image
-                  src="/images/logo/hype-logo-dark.svg"
-                  alt="HYPE Media Indonesia"
-                  width={100}
-                  height={32}
-                  className="h-8 w-auto"
-                />
-              */}
-              <span className="font-display text-3xl font-black tracking-tight text-hype-black leading-none">
-                HYPE
-              </span>
+              <Image
+                src="/images/logo/hype-logo-dark.svg"
+                alt="HYPE Media Indonesia"
+                width={100}
+                height={32}
+                className="h-8 w-auto"
+              />
             </Link>
             <p className="mt-3 text-sm font-medium text-hype-black/80 leading-relaxed max-w-xs">
               {siteConfig.tagline}

@@ -1,8 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, Camera, Store } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
 
 const fadeUp = {
@@ -90,28 +91,13 @@ export default function MerchantHeroSection() {
 
               {/* Image container — landscape */}
               <div className="relative aspect-4/3 rounded-3xl overflow-hidden border border-hype-border">
-                {/* Placeholder — hapus div ini dan uncomment <Image> saat foto siap */}
-                <div className="absolute inset-0 bg-hype-black-alt flex flex-col items-center justify-center gap-3">
-                  <div className="w-16 h-16 rounded-2xl bg-hype-yellow/10 border border-hype-yellow/20 flex items-center justify-center">
-                    <Store size={28} className="text-hype-yellow/60" />
-                  </div>
-                  <div className="text-center px-6">
-                    <p className="text-hype-gray text-xs mb-1">Foto restoran/kafe ramai pengunjung</p>
-                    <p className="text-hype-yellow/50 text-[10px] font-mono">/images/hero/merchant.webp</p>
-                    <p className="text-hype-gray/40 text-[10px] mt-0.5">(.webp / .png / .jpg)</p>
-                  </div>
-                </div>
-                {/*
-                  Uncomment saat foto tersedia (hapus div placeholder di atas):
-                  import Image from "next/image";
-                  <Image
-                    src="/images/hero/merchant.webp"
-                    alt="Restoran ramai pengunjung hasil campaign TikTok GO"
-                    fill
-                    className="object-cover"
-                    priority
-                  />
-                */}
+                <Image
+                  src="/images/hero/merchant.webp"
+                  alt="Restoran ramai pengunjung hasil campaign TikTok GO"
+                  fill
+                  className="object-cover"
+                  priority
+                />
                 <div className="absolute inset-0 bg-linear-to-t from-hype-black/50 via-transparent to-transparent pointer-events-none" />
               </div>
 

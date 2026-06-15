@@ -1,8 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Users } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
 
 export default function TentangHeroSection() {
@@ -53,31 +53,15 @@ export default function TentangHeroSection() {
           >
             <div className="relative w-full max-w-sm">
 
-              {/* Image container — portrait */}
-              <div className="relative aspect-3/4 rounded-3xl overflow-hidden border border-hype-border">
-                {/* Placeholder — hapus div ini dan uncomment <Image> saat foto siap */}
-                <div className="absolute inset-0 bg-hype-black-alt flex flex-col items-center justify-center gap-3">
-                  <div className="w-16 h-16 rounded-2xl bg-hype-yellow/10 border border-hype-yellow/20 flex items-center justify-center">
-                    <Users size={28} className="text-hype-yellow/60" />
-                  </div>
-                  <div className="text-center px-6">
-                    <p className="text-hype-gray text-xs mb-1">Foto tim HYPE atau founder</p>
-                    <p className="text-hype-yellow/50 text-[10px] font-mono">/images/hero/tentang-kami.webp</p>
-                    <p className="text-hype-gray/40 text-[10px] mt-0.5">(.webp / .png / .jpg)</p>
-                  </div>
-                </div>
-                {/*
-                  Uncomment saat foto tersedia (hapus div placeholder di atas):
-                  import Image from "next/image";
-                  <Image
-                    src="/images/hero/tentang-kami.webp"
-                    alt="Tim HYPE Media Indonesia"
-                    fill
-                    className="object-cover object-top"
-                  />
-                */}
-                {/* Gradient overlay for bottom card readability */}
-                <div className="absolute inset-0 bg-linear-to-t from-hype-black/80 via-hype-black/10 to-transparent pointer-events-none" />
+              {/* Image container — landscape */}
+              <div className="relative aspect-4/3 rounded-3xl overflow-hidden border border-hype-border">
+                <Image
+                  src="/images/hero/tentang-kami.webp"
+                  alt="Tim HYPE Media Indonesia"
+                  fill
+                  className="object-cover object-center"
+                />
+                <div className="absolute inset-0 bg-linear-to-t from-hype-black/60 via-hype-black/10 to-transparent pointer-events-none" />
               </div>
 
               {/* Floating — TikTok GO Official (top right) */}

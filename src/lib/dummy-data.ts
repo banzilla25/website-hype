@@ -10,7 +10,7 @@ export const portfolioItems = [
     category: "Restoran / F&B",
     client: "KFC Indonesia",
     location: "Jakarta Selatan",
-    thumbnail: "/images/portfolio/kfc-jakarta-selatan.jpg",
+    thumbnail: "/images/portfolio/kfc-jakarta-selatan.jpeg",
     challenge:
       "Meningkatkan kunjungan di jam makan siang weekday dan awareness menu baru di cabang Jakarta Selatan.",
     action:
@@ -27,7 +27,7 @@ export const portfolioItems = [
     category: "Kafe",
     client: "Kopi Kenangan",
     location: "Tangerang",
-    thumbnail: "/images/portfolio/kopi-kenangan-tangerang.jpg",
+    thumbnail: "/images/portfolio/kopi-kenangan-tangerang.jpeg",
     challenge:
       "Pembukaan gerai baru di Tangerang, butuh awareness cepat dan antrian panjang di hari pertama.",
     action:
@@ -44,7 +44,7 @@ export const portfolioItems = [
     category: "Restoran / F&B",
     client: "Mie Gacoan",
     location: "Bekasi",
-    thumbnail: "/images/portfolio/mie-gacoan-bekasi.jpg",
+    thumbnail: "/images/portfolio/mie-gacoan-bekasi.jpeg",
     challenge:
       "Meningkatkan traffic gerai di Bekasi dan mengenalkan level pedas baru kepada generasi muda.",
     action:
@@ -90,22 +90,23 @@ export const testimonials = [
 ] as const;
 
 // Brand yang sudah pernah bekerjasama dengan HYPE Media Indonesia
+// logo: path ke file di /public/images/partners/ — isi saat logo tersedia
 export const partnerBrands = [
-  "KFC",
-  "Momoyo",
-  "D'Crepes",
-  "Tianlala",
-  "Roti Gembul",
-  "Kopi Kenangan",
-  "Emados",
-  "Hokben",
-  "Chattime",
-  "Es Teler 77",
-  "Mixue",
-  "Ai-Cha",
-  "Mie Gacoan",
-  "Geprekin Aja",
-  "Jchicken",
+  { name: "KFC",           logo: "/images/partners/kfc.webp" },
+  { name: "Momoyo",        logo: "/images/partners/momoyo.webp" },
+  { name: "D'Crepes",      logo: "/images/partners/d-crepes.webp" },
+  { name: "Tianlala",      logo: "/images/partners/tianlala.webp" },
+  { name: "Roti Gembul",   logo: "/images/partners/roti-gembul.webp" },
+  { name: "Kopi Kenangan", logo: "/images/partners/kopi-kenangan.webp" },
+  { name: "Emados",        logo: "/images/partners/emados.webp" },
+  { name: "Hokben",        logo: "/images/partners/hokben.webp" },
+  { name: "Chattime",      logo: "/images/partners/chattime.webp" },
+  { name: "Es Teler 77",   logo: "/images/partners/es-teler-77.webp" },
+  { name: "Mixue",         logo: "/images/partners/mixue.webp" },
+  { name: "Ai-Cha",        logo: "/images/partners/ai-cha.webp" },
+  { name: "Mie Gacoan",    logo: "/images/partners/mie-gacoan.webp" },
+  { name: "Geprekin Aja",  logo: "/images/partners/geprekin-aja.webp" },
+  { name: "Jchicken",      logo: "/images/partners/jchicken.webp" },
 ] as const;
 
 // City display names for /tiktok-go/[kota]

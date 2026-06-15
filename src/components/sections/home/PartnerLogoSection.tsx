@@ -45,17 +45,32 @@ export default function PartnerLogoSection() {
           </motion.div>
         </div>
 
-        {/* Brand pills */}
+        {/* Brand pills / logo grid
+            MODE TEKS (aktif sekarang): menampilkan nama brand sebagai pill
+            MODE LOGO (aktif setelah logo tersedia): uncomment blok Image di bawah,
+            hapus <span>{brand.name}</span> di tiap pill
+        */}
         <div className="flex flex-wrap gap-2.5">
           {partnerBrands.map((brand, i) => (
             <motion.div
-              key={brand}
+              key={brand.name}
               initial={{ opacity: 0, scale: 0.9 }}
               animate={inView ? { opacity: 1, scale: 1 } : {}}
               transition={{ delay: 0.05 + i * 0.04 }}
-              className="bg-hype-black border border-hype-border hover:border-hype-white/20 rounded-xl px-4 py-2.5 transition-colors cursor-default"
+              className="bg-hype-black border border-hype-border hover:border-hype-white/20 rounded-xl px-4 py-2.5 transition-colors cursor-default flex items-center justify-center min-w-[80px]"
             >
-              <span className="text-hype-white text-sm font-semibold">{brand}</span>
+              {/*
+                Uncomment saat file logo tersedia di /public/images/partners/:
+                import Image from "next/image";
+                <Image
+                  src={brand.logo}
+                  alt={brand.name}
+                  width={80}
+                  height={32}
+                  className="h-7 w-auto object-contain brightness-0 invert"
+                />
+              */}
+              <span className="text-hype-white text-sm font-semibold">{brand.name}</span>
             </motion.div>
           ))}
         </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
@@ -41,24 +42,14 @@ export default function Header() {
             className="flex items-center gap-2 shrink-0"
             aria-label="HYPE Media Indonesia — Beranda"
           >
-            {/*
-              Uncomment saat logo siap — hapus dua <span> di bawah:
-              import Image from "next/image";
-              <Image
-                src="/images/logo/hype-logo-light.svg"
-                alt="HYPE Media Indonesia"
-                width={120}
-                height={40}
-                className="h-8 lg:h-10 w-auto"
-                priority
-              />
-            */}
-            <span className="font-display text-2xl lg:text-3xl font-black tracking-tight text-hype-yellow leading-none">
-              HYPE
-            </span>
-            <span className="hidden sm:block text-hype-white text-xs font-medium leading-tight opacity-70 max-w-20">
-              Media<br />Indonesia
-            </span>
+            <Image
+              src="/images/logo/hype-logo-light.svg"
+              alt="HYPE Media Indonesia"
+              width={120}
+              height={40}
+              className="h-8 lg:h-10 w-auto"
+              priority
+            />
           </Link>
 
           {/* Desktop nav */}

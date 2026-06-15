@@ -1,8 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, Camera } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
 
 const fadeUp = {
@@ -84,39 +85,13 @@ export default function HeroSection() {
 
               {/* Image container — portrait, transparent bg untuk PNG/WebP no-background */}
               <div className="relative aspect-4/5">
-                {/* Placeholder — hapus div ini dan uncomment <Image> saat foto siap */}
-                <div className="absolute inset-0 rounded-3xl border-2 border-dashed border-hype-border/40 flex flex-col items-center justify-center gap-3">
-                  <div className="w-16 h-16 rounded-2xl bg-hype-yellow/10 border border-hype-yellow/20 flex items-center justify-center">
-                    <Camera size={28} className="text-hype-yellow/60" />
-                  </div>
-                  <div className="text-center px-6">
-                    <p className="text-hype-gray text-xs mb-1">Foto kreator filming — no background</p>
-                    <p className="text-hype-yellow/50 text-[10px] font-mono">/images/hero/beranda.webp</p>
-                    <p className="text-hype-gray/40 text-[10px] mt-0.5">(.webp / .png / .jpg)</p>
-                  </div>
-                </div>
-                {/*
-                  Uncomment saat foto tersedia (hapus div placeholder di atas):
-                  import Image from "next/image";
-
-                  Untuk foto NO BACKGROUND (webp/png transparan) — pakai object-contain:
-                  <Image
-                    src="/images/hero/beranda.webp"
-                    alt="Kreator HYPE sedang filming konten"
-                    fill
-                    className="object-contain object-bottom"
-                    priority
-                  />
-
-                  Untuk foto DENGAN BACKGROUND (jpg/webp normal) — pakai object-cover:
-                  <Image
-                    src="/images/hero/beranda.jpg"
-                    alt="Kreator HYPE sedang filming konten di restoran"
-                    fill
-                    className="object-cover"
-                    priority
-                  />
-                */}
+                <Image
+                  src="/images/hero/beranda.png"
+                  alt="Kreator HYPE sedang filming konten"
+                  fill
+                  className="object-contain object-bottom"
+                  priority
+                />
               </div>
 
               {/* Floating — Kreator Aktif */}
