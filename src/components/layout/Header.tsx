@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { img } from "@/lib/utils";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -43,7 +44,7 @@ export default function Header() {
             aria-label="HYPE Media Indonesia — Beranda"
           >
             <Image
-              src="/images/logo/hype-logo-light.svg"
+              src={img("/images/logo/hype-logo-light.svg")}
               alt="HYPE Media Indonesia"
               width={120}
               height={40}

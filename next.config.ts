@@ -11,6 +11,9 @@ const nextConfig: NextConfig = {
     formats: ["image/avif", "image/webp"],
     remotePatterns: [],
   },
+  env: {
+    NEXT_PUBLIC_BASE_PATH: isProd ? "/website-hype" : "",
+  },
 };
 
 export default nextConfig;

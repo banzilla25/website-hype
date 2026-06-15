@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, Users, Wallet, Star } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
+import { img } from "@/lib/utils";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
@@ -91,7 +92,7 @@ export default function KreatorHeroSection() {
               {/* Image container — portrait, transparent bg untuk PNG/WebP no-background */}
               <div className="relative aspect-3/4">
                 <Image
-                  src="/images/hero/kreator.png"
+                  src={img("/images/hero/kreator.png")}
                   alt="Kreator muda HYPE filming konten di kafe"
                   fill
                   className="object-contain object-bottom"

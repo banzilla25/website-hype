@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { siteConfig } from "@/lib/site-config";
+import { img } from "@/lib/utils";
 
 export default function TentangHeroSection() {
   const ref = useRef(null);
@@ -56,7 +57,7 @@ export default function TentangHeroSection() {
               {/* Image container — landscape */}
               <div className="relative aspect-4/3 rounded-3xl overflow-hidden border border-hype-border">
                 <Image
-                  src="/images/hero/tentang-kami.webp"
+                  src={img("/images/hero/tentang-kami.webp")}
                   alt="Tim HYPE Media Indonesia"
                   fill
                   className="object-cover object-center"

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
+import { img } from "@/lib/utils";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
@@ -92,7 +93,7 @@ export default function MerchantHeroSection() {
               {/* Image container — landscape */}
               <div className="relative aspect-4/3 rounded-3xl overflow-hidden border border-hype-border">
                 <Image
-                  src="/images/hero/merchant.webp"
+                  src={img("/images/hero/merchant.webp")}
                   alt="Restoran ramai pengunjung hasil campaign TikTok GO"
                   fill
                   className="object-cover"

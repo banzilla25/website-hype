@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { partnerBrands } from "@/lib/dummy-data";
+import { img } from "@/lib/utils";
 
 export default function PartnerLogoSection() {
   const ref = useRef(null);
@@ -58,10 +59,10 @@ export default function PartnerLogoSection() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={inView ? { opacity: 1, scale: 1 } : {}}
               transition={{ delay: 0.05 + i * 0.04 }}
-              className="bg-hype-black border border-hype-border hover:border-hype-white/20 rounded-xl px-4 py-2.5 transition-colors cursor-default flex items-center justify-center min-w-[80px]"
+              className="bg-hype-black border border-hype-border hover:border-hype-white/20 rounded-xl px-4 py-2.5 transition-colors cursor-default flex items-center justify-center min-w-20"
             >
               <Image
-                src={brand.logo}
+                src={img(brand.logo)}
                 alt={brand.name}
                 width={80}
                 height={32}

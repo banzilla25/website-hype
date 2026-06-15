@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { img } from "@/lib/utils";
 import { MessageCircle, MapPin, Mail } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
 
@@ -23,7 +24,7 @@ export default function Footer() {
           <div className="sm:col-span-2 lg:col-span-1">
             <Link href="/" aria-label="HYPE Media Indonesia">
               <Image
-                src="/images/logo/hype-logo-dark.svg"
+                src={img("/images/logo/hype-logo-dark.svg")}
                 alt="HYPE Media Indonesia"
                 width={100}
                 height={32}

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
+import { img } from "@/lib/utils";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -28,7 +29,7 @@ export default function HeroSection() {
           backgroundSize: "128px",
         }}
       />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-hype-yellow/5 blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-150 rounded-full bg-hype-yellow/5 blur-3xl pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 w-full">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -86,7 +87,7 @@ export default function HeroSection() {
               {/* Image container — portrait, transparent bg untuk PNG/WebP no-background */}
               <div className="relative aspect-4/5">
                 <Image
-                  src="/images/hero/beranda.png"
+                  src={img("/images/hero/beranda.png")}
                   alt="Kreator HYPE sedang filming konten"
                   fill
                   className="object-contain object-bottom"
