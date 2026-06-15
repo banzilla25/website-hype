@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import FloatingWhatsApp from "@/components/layout/FloatingWhatsApp";
+import JoinCommunityModal from "@/components/layout/JoinCommunityModal";
 import { siteConfig } from "@/lib/site-config";
 
 const anton = Anton({
@@ -119,6 +120,7 @@ export default function RootLayout({
         <main className="flex-1 pt-16 lg:pt-20">{children}</main>
         <Footer />
         <FloatingWhatsApp />
+        <JoinCommunityModal />
       </body>
     </html>
   );
